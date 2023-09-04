@@ -1,0 +1,35 @@
+<div class="login-container">
+  <h1>Login</h1>
+  <form>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username1"
+        name="username"
+        [(ngModel)]="username1"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password1"
+        name="password"
+        [(ngModel)]="password1"
+        required
+      />
+    </div>
+    <!-- Display the matched user's username and type (should be Redis storage type)-->
+    <div *ngIf="usname">
+      <label for="displayName">Type of label:</label>
+      <span>{{ nameapi }}</span>
+      <br /><br />
+      <label for="displayUsername">Username:</label>
+      <span>{{ usname }}</span>
+    </div>
+    <br />
+    <button type="button" (click)="submitForm()">Submit</button>
+  </form>
+</div>
